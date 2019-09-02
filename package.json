@@ -1,6 +1,6 @@
 {
   "name": "hwcrypto-ts",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "hwcrypto-js port for TypeScript",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -26,8 +26,7 @@
   },
   "homepage": "https://github.com/jeserkin/hwcrypto-ts#readme",
   "dependencies": {
-    "hwcrypto-js": "0.0.12",
-    "rxjs": "^6.5.2"
+    "hwcrypto-js": "0.0.12"
   },
   "devDependencies": {
     "jest": "^24.9.0",

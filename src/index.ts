@@ -1,9 +1,7 @@
-import { Observable } from 'rxjs';
-
 export interface Hwcrypto {
-  getCertificate(options: SigningOptions): Observable<Certificate>;
+  getCertificate(options: SigningOptions): Promise<Certificate>;
 
-  sign(certificate: Certificate, hash: SignatureHash, options?: SigningOptions): Observable<Signature>;
+  sign(certificate: Certificate, hash: SignatureHash, options?: SigningOptions): Promise<Signature>;
 }
 
 export interface SigningOptions {
