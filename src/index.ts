@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 export interface Hwcrypto {
   getCertificate(options: SigningOptions): Observable<Certificate>;
 
-  sign(certificate: Certificate, hash: SignatureHash, options?: SigningOptions): Promise<Signature>;
+  sign(certificate: Certificate, hash: SignatureHash, options?: SigningOptions): Observable<Signature>;
 }
 
 export interface SigningOptions {
@@ -17,7 +17,7 @@ export interface Certificate {
 }
 
 export interface SignatureHash {
-  type: string;
+  type: SignatureHashType | string;
   value: Uint8Array;
   hex: string;
 }
@@ -25,4 +25,12 @@ export interface SignatureHash {
 export interface Signature {
   value: Uint8Array;
   hex?: string;
+}
+
+export enum SignatureHashType {
+  SHA1 = 'SHA-1',
+  SHA224 = 'SHA-224',
+  SHA256 = 'SHA-256',
+  SHA384 = 'SHA-384',
+  SHA512 = 'SHA-512',
 }
